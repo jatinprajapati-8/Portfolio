@@ -1,0 +1,49 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* THEME TOKENS */
+html.light {
+  --bg: 245 245 247; /* #F5F5F7 */
+  --fg: 11 11 12; /* #0B0B0C */
+  --muted: 63 63 70; /* gray-ish */
+  --line: 0 0 0 / 0.1;
+  --card: 0 0 0 / 0.03;
+  --card2: 0 0 0 / 0.05;
+}
+
+html.dark {
+  --bg: 11 11 12; /* #0B0B0C */
+  --fg: 245 245 247; /* #F5F5F7 */
+  --muted: 161 161 170; /* gray-ish */
+  --line: 255 255 255 / 0.12;
+  --card: 255 255 255 / 0.04;
+  --card2: 255 255 255 / 0.06;
+}
+
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--fg));
+  font-family: ui-sans-serif, system-ui, -apple-system, "SF Pro Display", Inter,
+    Arial;
+}
+
+::selection {
+  background: rgb(var(--fg));
+  color: rgb(var(--bg));
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(var(--bg));
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(125, 125, 125, 0.35);
+  border-radius: 999px;
+}
