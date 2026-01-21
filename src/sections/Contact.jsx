@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import SectionWrapper from "../components/SectionWrapper";
 import MagneticButton from "../components/MagneticButton";
@@ -7,49 +7,48 @@ export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState("");
 
-  const SHEET_API = "REDACTED_SHEET_API_URL";
+  const SHEET_API = import.meta.env.VITE_SHEET_API;
 
   const onSubmit = async (e) => {
-  e.preventDefault();
-  setDone("");
+    e.preventDefault();
+    setDone("");
 
-  const form = e.currentTarget;
+    const form = e.currentTarget;
 
-  const payload = {
-    name: form.name.value,
-    email: form.email.value,
-    message: form.message.value,
-  };
+    const payload = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value,
+    };
 
-  try {
-    setLoading(true);
+    try {
+      setLoading(true);
 
-    const formData = new FormData();
-    formData.append("name", payload.name);
-    formData.append("email", payload.email);
-    formData.append("message", payload.message);
+      const formData = new FormData();
+      formData.append("name", payload.name);
+      formData.append("email", payload.email);
+      formData.append("message", payload.message);
 
-    const res = await fetch(SHEET_API, {
-      method: "POST",
-      body: formData,
-    });
+      const res = await fetch(SHEET_API, {
+        method: "POST",
+        body: formData,
+      });
 
-    const text = await res.text();
+      const text = await res.text();
 
-    if (text.includes("OK")) {
-      setDone("✅ Message Sent successfully!");
-      form.reset();
-    } else {
+      if (text.includes("OK")) {
+        setDone("✅ Message Sent successfully!");
+        form.reset();
+      } else {
+        setDone("❌ Failed to save. Try again later.");
+      }
+    } catch (err) {
+      // console.error(err);
       setDone("❌ Failed to save. Try again later.");
+    } finally {
+      setLoading(false);
     }
-  } catch (err) {
-    // console.error(err);
-    setDone("❌ Failed to save. Try again later.");
-  } finally {
-    setLoading(false);
-  }
-};
-
+  };
 
   return (
     <SectionWrapper id="contact" label="Contact">
