@@ -71,10 +71,38 @@ export default function Contact() {
             <p className="text-xs uppercase tracking-[0.35em] text-muted/70">
               Quick Info
             </p>
-            <div className="mt-4 space-y-2 text-sm text-muted/85">
-              <p>📩 Email: jxtxn0@gmail.com</p>
-              <p>🌍 Location: India</p>
-              <p>💼 Role: Full-Stack Developer</p>
+            <div className="mt-4 space-y-3 text-sm">
+              <a
+                href="mailto:jatinparjapati93@gmail.com"
+                className="flex items-center gap-2 hover:text-primary transition"
+              >
+                📧 <span>jatinparjapati93@gmail.com</span>
+              </a>
+
+              <a
+                href="https://wa.me/919319385182"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 hover:text-primary transition"
+              >
+                📱 <span>+91 9319385182</span>
+              </a>
+
+              <a
+                href="https://linkedin.com/in//jatin-prajapati93"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 hover:text-primary transition"
+              >
+                💼 <span>Connect on LinkedIn</span>
+              </a>
+              <p className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                🌍 <span>Location: Chandigarh,India</span>
+              </p>
+
+              <p className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                💼 <span>Full-Stack Developer</span>
+              </p>
             </div>
           </div>
         </motion.div>
