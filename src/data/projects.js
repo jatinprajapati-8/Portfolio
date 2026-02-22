@@ -30,7 +30,7 @@ export const projects = [
     description:
       "A blog platform where users can create, edit and manage posts with authentication and a clean UI.",
     tags: ["React", "Node", "FireBase", "GoogleAuth"],
-    link: "https://nest-eta.vercel.app/",
+    link: "https://nesthub.vercel.app",
     github: "https://github.com/jatinprajapati-8/Nest",
     year: "2024",
     status: "Completed",
