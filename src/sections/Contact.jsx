@@ -114,30 +114,133 @@ export default function Contact() {
           onSubmit={onSubmit}
           className="md:col-span-7 rounded-3xl border border-line bg-card p-6 md:p-7"
         >
+          {/* NAME + EMAIL */}
           <div className="grid md:grid-cols-2 gap-4">
-            <input
-              required
-              name="name"
-              placeholder="Your name"
-              className="rounded-2xl border border-line bg-bg px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-black/10"
-            />
-            <input
-              required
-              name="email"
-              type="email"
-              placeholder="Your email"
-              className="rounded-2xl border border-line bg-bg px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-black/10"
-            />
+            {/* NAME */}
+            <div className="relative group">
+              <input
+                required
+                id="name"
+                name="name"
+                placeholder=" "
+                className="peer w-full rounded-2xl border border-line bg-bg mb-1.5 px-4 pt-5 pb-2 text-sm outline-none text-black dark:text-white focus:border-black dark:focus:border-white transition"
+              />
+
+              <label
+                htmlFor="name"
+                className="
+      absolute left-3
+      -top-2
+      z-10
+      px-2
+      text-xs
+      text-muted/70
+      transition-all
+      rounded
+      bg-[#F5F5F7]
+      shadow-[0_0_0_5px_theme(colors.bg)]
+      peer-placeholder-shown:top-4
+      peer-placeholder-shown:text-sm
+      peer-placeholder-shown:shadow-none
+      peer-focus:-top-2
+      peer-focus:text-xs
+      peer-focus:text-black
+      dark:peer-focus:text-white
+      peer-focus:shadow-[0_0_0_5px_theme(colors.bg)]
+    "
+              >
+                Your name
+              </label>
+
+              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black dark:bg-white transition-all duration-300 group-focus-within:w-full"></span>
+            </div>
+
+            {/* EMAIL */}
+            <div className="relative group">
+              <input
+                required
+                id="email"
+                name="email"
+                type="email"
+                placeholder=" "
+                className="peer w-full rounded-2xl border border-line bg-bg mb-1.5 px-4 pt-5 pb-2 text-sm outline-none text-black dark:text-white focus:border-black dark:focus:border-white transition"
+              />
+
+              <label
+                htmlFor="email"
+                className="
+      absolute left-3
+      -top-2
+      z-10
+      px-2
+      text-xs
+      text-muted/70
+      transition-all
+      rounded
+      bg-[#F5F5F7]
+      shadow-[0_0_0_5px_theme(colors.bg)]
+
+      peer-placeholder-shown:top-4
+      peer-placeholder-shown:text-sm
+      peer-placeholder-shown:shadow-none
+
+      peer-focus:-top-2
+      peer-focus:text-xs
+      peer-focus:text-black
+      dark:peer-focus:text-white
+      peer-focus:shadow-[0_0_0_5px_theme(colors.bg)]
+    "
+              >
+                Your email
+              </label>
+
+              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black dark:bg-white transition-all duration-300 group-focus-within:w-full"></span>
+            </div>
           </div>
 
-          <textarea
-            required
-            name="message"
-            rows={5}
-            placeholder="Tell me about your project..."
-            className="mt-4 w-full rounded-2xl border border-line bg-bg px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-black/10 resize-none"
-          />
+          {/* MESSAGE */}
+          <div className="relative group mt-4">
+            <textarea
+              required
+              id="message"
+              name="message"
+              rows={5}
+              placeholder=" "
+              className="peer w-full rounded-2xl border border-line bg-bg px-4 pt-5 pb-2 text-sm outline-none resize-none text-black dark:text-white focus:border-black dark:focus:border-white transition"
+            />
 
+            <label
+              htmlFor="message"
+              className="
+      absolute left-3
+      -top-2
+      z-10
+      px-2
+      text-xs
+      text-muted/70
+      transition-all
+      rounded
+      bg-[#F5F5F7]
+      shadow-[0_0_0_5px_theme(colors.bg)]
+
+      peer-placeholder-shown:top-4
+      peer-placeholder-shown:text-sm
+      peer-placeholder-shown:shadow-none
+
+      peer-focus:-top-2
+      peer-focus:text-xs
+      peer-focus:text-black
+      dark:peer-focus:text-white
+      peer-focus:shadow-[0_0_0_5px_theme(colors.bg)]
+    "
+            >
+              Tell me about your project...
+            </label>
+
+            <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black dark:bg-white transition-all duration-300 group-focus-within:w-full"></span>
+          </div>
+
+          {/* BUTTON SAME */}
           <div className="mt-5 flex items-center justify-between gap-3">
             <p className="text-xs text-muted/70">
               {done ? done : "No spam. Straight to the point."}
